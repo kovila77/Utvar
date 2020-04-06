@@ -9,5 +9,6 @@ Pan::Pan(int volume, int inventoryNumber)
 
 void Pan::print()
 {
+	KitchenUtensils::print();
 	std::cout << "Volume: " << volume << std::endl;
 }

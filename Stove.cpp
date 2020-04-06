@@ -9,6 +9,6 @@ Stove::Stove(unsigned int color, int inventoryNumber)
 
 void Stove::print()
 {
-	std::cout << "Color: " << color << std::endl;
 	KitchenUtensils::print();
+	std::cout << "Color: " << color << std::endl;
 }

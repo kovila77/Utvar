@@ -8,6 +8,6 @@ GasStove::GasStove(int gasConsumption, unsigned int color, int inventoryNumber) 
 
 void GasStove::print()
 {
-	std::cout << "Gas consumption: " << gasConsumption << std::endl;
 	Stove::print();
+	std::cout << "Gas consumption: " << gasConsumption << std::endl;
 }

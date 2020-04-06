@@ -10,5 +10,5 @@ public:
 
 	Stove() = delete;
 	
-	void print();
+	void print()  override;
 };

@@ -5,7 +5,7 @@ class KitchenUtensils
 public:
 	int inventoryNumber;
 
-	void print();
+	virtual void print();
 
 protected:
 	KitchenUtensils() = default;

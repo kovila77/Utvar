@@ -8,5 +8,5 @@ public:
 
 	Pan(int volume, int inventoryNumber);
 
-	void print();
+	void print() override;
 };

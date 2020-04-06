@@ -9,5 +9,5 @@ public:
 
 	Multicooker(bool haveFastFunction, int volume, int power, unsigned int color, int inventoryNumber);
 
-	void print();
+	void print() override;
 };

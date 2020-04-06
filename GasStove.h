@@ -8,5 +8,5 @@ public:
 
 	GasStove(int gasConsumption, unsigned int color, int inventoryNumber);
 
-	void print();
+	void print() override;
 };
