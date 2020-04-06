@@ -129,6 +129,7 @@
     <ClInclude Include="Pan.h" />
     <ClInclude Include="Stove.h" />
     <ClInclude Include="KitchenUtensils.h" />
+    <ClInclude Include="Tree.h" />
     <ClInclude Include="Utensils.h" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +140,7 @@
     <ClCompile Include="Multicooker.cpp" />
     <ClCompile Include="Pan.cpp" />
     <ClCompile Include="Stove.cpp" />
+    <ClCompile Include="Tree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
