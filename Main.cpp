@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Utensils.h"
+#include "Tree.h"
 
 using namespace std;
 
@@ -34,7 +35,18 @@ void main()
 
 	//cout << ms.print << endl;
 
+	PTree r = nullptr;
+	bool res;
+	
+	Insert(r, 4, res);
+	Insert(r, 5, res);
+	Insert(r, 6, res);
+	Insert(r, 1, res);
+	Insert(r, 3, res);
 
+	PrintTree(r, 1);
+
+	DeleteTree(r);
 
 	system("pause");
 }

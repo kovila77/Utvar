@@ -6,22 +6,22 @@
 #define max(a,b) (((a) > (b)) ? (a) : (b))
 using namespace std;
 
-int Tree::height(PTree p)
+int height(PTree p)
 {
 	return p == nullptr ? 0 : p->Height;
 }
 
-void Tree::newHeight(PTree p)
+void newHeight(PTree p)
 {
 	p->Height = max(height(p->Left), height(p->Right)) + 1;
 }
 
-int Tree::sayBalance(PTree p)
+int sayBalance(PTree p)
 {
 	return height(p->Right) - height(p->Left);
 }
 
-void Tree::LL(PTree& p)
+void LL(PTree& p)
 {
 	PTree LeftSon = p->Left;
 	p->Left = LeftSon->Right;
@@ -31,7 +31,7 @@ void Tree::LL(PTree& p)
 	newHeight(p);
 }
 
-void Tree::RR(PTree& p)
+void RR(PTree& p)
 {
 	PTree RightSon = p->Right;
 	p->Right = RightSon->Left;
@@ -41,19 +41,19 @@ void Tree::RR(PTree& p)
 	newHeight(p);
 }
 
-void Tree::RL(PTree& p)
+void RL(PTree& p)
 {
 	LL(p->Right);
 	RR(p);
 }
 
-void Tree::LR(PTree& p)
+void LR(PTree& p)
 {
 	RR(p->Left);
 	LL(p);
 }
 
-void Tree::Balance(PTree& p)
+void Balance(PTree& p)
 {
 	if (sayBalance(p) == 2)
 	{
@@ -82,7 +82,7 @@ void Tree::Balance(PTree& p)
 	}
 }
 
-void Tree::Insert(PTree& Root, unsigned long long x, bool& wasInsert)
+void Insert(PTree& Root, unsigned long long x, bool& wasInsert)
 {
 	if (Root == nullptr)
 	{
@@ -116,7 +116,7 @@ void Tree::Insert(PTree& Root, unsigned long long x, bool& wasInsert)
 	}
 }
 
-void Tree::deletFromTree(PTree& root, unsigned long long x, int& countRotation, bool inMin)
+void deletFromTree(PTree& root, unsigned long long x, int& countRotation, bool inMin)
 {
 	if (root == nullptr)
 	{
@@ -175,7 +175,7 @@ void Tree::deletFromTree(PTree& root, unsigned long long x, int& countRotation, 
 	}
 }
 
-PTree Tree::delInLeft(PTree& root, int& countRotation)
+PTree delInLeft(PTree& root, int& countRotation)
 {
 	PTree result;
 	if (root->Right != nullptr)
@@ -195,7 +195,7 @@ PTree Tree::delInLeft(PTree& root, int& countRotation)
 	return result;
 }
 
-PTree Tree::delInRight(PTree& root, int& countRotation)
+PTree delInRight(PTree& root, int& countRotation)
 {
 	PTree result;
 	if (root->Left != nullptr)
@@ -215,7 +215,7 @@ PTree Tree::delInRight(PTree& root, int& countRotation)
 	return result;
 }
 
-void Tree::BalanceAfterDel(PTree& p, int& countRotation)
+void BalanceAfterDel(PTree& p, int& countRotation)
 {
 	if (sayBalance(p) == 2)
 	{
@@ -246,7 +246,7 @@ void Tree::BalanceAfterDel(PTree& p, int& countRotation)
 	}
 }
 
-void Tree::DeleteTree(PTree& R)
+void DeleteTree(PTree& R)
 {
 	if (R == nullptr) return;
 	DeleteTree(R->Left);
@@ -254,7 +254,7 @@ void Tree::DeleteTree(PTree& R)
 	delete R;
 }
 
-void Tree::InfFind(PTree root, unsigned long long& number, unsigned long long& tmp, bool& find)
+void InfFind(PTree root, unsigned long long& number, unsigned long long& tmp, bool& find)
 {
 	if (root == nullptr || find)
 	{
@@ -273,7 +273,7 @@ void Tree::InfFind(PTree root, unsigned long long& number, unsigned long long& t
 	}
 }
 
-void Tree::PrintTree(PTree R, int level)
+void PrintTree(PTree R, int level)
 {
 	if (R == nullptr)
 		return;
