@@ -1,9 +1,9 @@
 #include "ElectricStove.h"
 #include <iostream>
 
-ElectricStove::ElectricStove(int power, unsigned int color, int inventoryNumber) : Stove(color, inventoryNumber)
+ElectricStove::ElectricStove()
 {
-	this->power = power;
+	std::cout << "Write Power: " << power << std::endl;
 }
 
 void ElectricStove::print()

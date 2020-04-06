@@ -3,7 +3,7 @@
 
 KitchenUtensils::KitchenUtensils()
 {
-	std::cout << "dfdasdfadsfasdfasdfaf";
+	std::cout << "Write Invenory number: " << inventoryNumber << std::endl;
 }
 
 void KitchenUtensils::print()

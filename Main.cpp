@@ -7,6 +7,7 @@ using namespace std;
 void main()
 {
 	cout << "hello world (" << endl;
+	setlocale(LC_ALL, "Russian");
 
 	//cout << endl;
 
@@ -30,8 +31,8 @@ void main()
 
 	//cout << endl;
 
-	Multicooker mk(true, 1, 2, 3, 4);
-	mk.print(); 
+	/*Multicooker mk(true, 1, 2, 3, 4);
+	mk.print(); */
 
 	//cout << endl;
 
@@ -67,6 +68,9 @@ void main()
 	//PrintTree(gg, 1);
 
 	//DeleteTree(gg);
+
+	cout << "dfd" << endl;
+	int f = inputInt();
 
 	cout << endl;
 

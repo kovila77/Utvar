@@ -1,10 +1,9 @@
 #include "Stove.h"
 #include <iostream>
 
-Stove::Stove(unsigned int color, int inventoryNumber)
+Stove::Stove()
 {
-	this->color = color;
-	this->inventoryNumber = inventoryNumber;
+	std::cout << "Write Color: " << color << std::endl;
 }
 
 void Stove::print()

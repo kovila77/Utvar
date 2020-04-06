@@ -6,9 +6,7 @@ class Stove : virtual public KitchenUtensils
 public:
 	unsigned int color;
 
-	Stove(unsigned int color, int inventoryNumber);
-
-	Stove() = delete;
+	Stove();
 	
 	void print()  override;
 };

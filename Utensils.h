@@ -6,3 +6,4 @@
 #include "ElectricStove.h"
 #include "GasStove.h"
 #include "Multicooker.h"
+#include "Input.h"

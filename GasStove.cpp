@@ -1,9 +1,9 @@
 #include "GasStove.h"
 #include <iostream>
 
-GasStove::GasStove(int gasConsumption, unsigned int color, int inventoryNumber) : Stove (color, inventoryNumber)
+GasStove::GasStove()
 {
-	this->gasConsumption = gasConsumption;
+	std::cout << "Write Gas consumption: " << gasConsumption << std::endl;
 }
 
 void GasStove::print()

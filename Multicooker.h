@@ -7,7 +7,7 @@ class Multicooker : virtual public Pan, virtual public ElectricStove
 public:
 	bool haveFastFunction;
 
-	Multicooker(bool haveFastFunction, int volume, int power, unsigned int color, int inventoryNumber);
+	Multicooker();
 
 	void print() override;
 };

@@ -1,10 +1,9 @@
 #include "Pan.h"
 #include <iostream>
 
-Pan::Pan(int volume, int inventoryNumber)
+Pan::Pan()
 {
-	this->volume = volume;
-	this->inventoryNumber = inventoryNumber;
+	std::cout << "Write Volume: " << volume << std::endl;
 }
 
 void Pan::print()

@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClInclude Include="ElectricStove.h" />
     <ClInclude Include="GasStove.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="Multicooker.h" />
     <ClInclude Include="Pan.h" />
     <ClInclude Include="Stove.h" />
@@ -135,6 +136,7 @@
   <ItemGroup>
     <ClCompile Include="ElectricStove.cpp" />
     <ClCompile Include="GasStove.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="KitchenUtensils.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Multicooker.cpp" />

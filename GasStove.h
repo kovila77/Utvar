@@ -6,7 +6,7 @@ class GasStove : virtual public Stove
 public:
 	int gasConsumption;
 
-	GasStove(int gasConsumption, unsigned int color, int inventoryNumber);
+	GasStove();
 
 	void print() override;
 };

@@ -6,7 +6,7 @@ class Pan : virtual public KitchenUtensils
 public:
 	int volume;
 
-	Pan(int volume, int inventoryNumber);
+	Pan();
 
 	void print() override;
 };
