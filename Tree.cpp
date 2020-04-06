@@ -82,26 +82,26 @@ void Balance(PTree& p)
 	}
 }
 
-void Insert(PTree& Root, unsigned long long x, bool& wasInsert)
+void Insert(PTree& Root, KitchenUtensils* newItem, bool& wasInsert)
 {
 	if (Root == nullptr)
 	{
 		Root = new Tree;
-		Root->Data = x;
+		Root->item = newItem;
 		Root->Height = 1;
 		Root->Right = Root->Left = nullptr;
 	}
 	else
 	{
-		if (x < Root->Data)
+		if (newItem->inventoryNumber < Root->item->inventoryNumber)
 		{
-			Insert(Root->Left, x, wasInsert);
+			Insert(Root->Left, newItem, wasInsert);
 		}
 		else
 		{
-			if (x > Root->Data)
+			if (newItem->inventoryNumber > Root->item->inventoryNumber)
 			{
-				Insert(Root->Right, x, wasInsert);
+				Insert(Root->Right, newItem, wasInsert);
 			}
 			else
 			{
@@ -116,21 +116,21 @@ void Insert(PTree& Root, unsigned long long x, bool& wasInsert)
 	}
 }
 
-void deletFromTree(PTree& root, unsigned long long x, int& countRotation, bool inMin)
+void deletFromTree(PTree& root, int inventoryNumber, int& countRotation, bool inMin)
 {
 	if (root == nullptr)
 	{
 		return;
 	}
-	if (x < root->Data)
+	if (inventoryNumber < root->item->inventoryNumber)
 	{
-		deletFromTree(root->Left, x, countRotation, inMin);
+		deletFromTree(root->Left, inventoryNumber, countRotation, inMin);
 	}
 	else
 	{
-		if (x > root->Data)
+		if (inventoryNumber > root->item->inventoryNumber)
 		{
-			deletFromTree(root->Right, x, countRotation, inMin);
+			deletFromTree(root->Right, inventoryNumber, countRotation, inMin);
 		}
 		else
 		{
@@ -162,9 +162,10 @@ void deletFromTree(PTree& root, unsigned long long x, int& countRotation, bool i
 					{
 						ForDel = delInLeft(root->Left, countRotation);
 					}
-					root->Data = ForDel->Data;
+					root->item = ForDel->item;
 				}
 			}
+			delete ForDel->item;
 			delete ForDel;
 		}
 	}
@@ -254,24 +255,24 @@ void DeleteTree(PTree& R)
 	delete R;
 }
 
-void InfFind(PTree root, unsigned long long& number, unsigned long long& tmp, bool& find)
-{
-	if (root == nullptr || find)
-	{
-		return;
-	}
-	InfFind(root->Left, number, tmp, find);
-	if (number == 0)
-	{
-		tmp = root->Data;
-		find = true;
-	}
-	else
-	{
-		number--;
-		InfFind(root->Right, number, tmp, find);
-	}
-}
+//void InfFind(PTree root, unsigned long long& number, unsigned long long& tmp, bool& find)
+//{
+//	if (root == nullptr || find)
+//	{
+//		return;
+//	}
+//	InfFind(root->Left, number, tmp, find);
+//	if (number == 0)
+//	{
+//		tmp = root->Data;
+//		find = true;
+//	}
+//	else
+//	{
+//		number--;
+//		InfFind(root->Right, number, tmp, find);
+//	}
+//}
 
 void PrintTree(PTree R, int level)
 {
@@ -282,6 +283,6 @@ void PrintTree(PTree R, int level)
 	{
 		cout << setw(6) << ' ';
 	}
-	cout << setw(6) << R->Data << endl;
+	cout << setw(6) << R->item->inventoryNumber << endl;
 	PrintTree(R->Left, level + 1);
 }

@@ -5,8 +5,8 @@ struct Tree
 {
 	Tree* Left;
 	Tree* Right;
+	KitchenUtensils* item;
 	//unsigned long long Data;
-
 	int Height;
 };
 
@@ -21,10 +21,10 @@ void RR(PTree& p);
 void RL(PTree& p);
 void LR(PTree& p);
 void Balance(PTree& p);
-void Insert(PTree& Root, unsigned long long x, bool& wasInsert);
+void Insert(PTree& Root, KitchenUtensils* item, bool& wasInsert);
 
 // Удаление вершин с болансировкой
-void deletFromTree(PTree& root, unsigned long long x, int& countRotation, bool inMin);
+void deletFromTree(PTree& root, int inventoryNumber, int& countRotation, bool inMin);
 PTree delInLeft(PTree& root, int& countRotation);
 PTree delInRight(PTree& root, int& countRotation);
 void BalanceAfterDel(PTree& p, int& countRotation);
@@ -32,8 +32,8 @@ void BalanceAfterDel(PTree& p, int& countRotation);
 // Освобождение памяти из-под дерева
 void DeleteTree(PTree& R);
 
-// Инфиксный проход по дереву для нахождения number - числа по счёту
-void InfFind(PTree root, unsigned long long& number, unsigned long long& tmp, bool& find);
+//// Инфиксный проход по дереву для нахождения number - числа по счёту
+//void InfFind(PTree root, unsigned long long& number, unsigned long long& tmp, bool& find);
 
 // Печать дерева на бок
 void PrintTree(PTree R, int level);

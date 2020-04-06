@@ -8,5 +8,5 @@ public:
 	virtual void print();
 
 protected:
-	KitchenUtensils() = default;
+	KitchenUtensils();
 };
