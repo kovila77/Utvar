@@ -1,13 +1,12 @@
 #pragma once
-
-
+#include "Utensils.h"
 
 struct Tree
 {
-
 	Tree* Left;
 	Tree* Right;
-	unsigned long long Data;
+	//unsigned long long Data;
+
 	int Height;
 };
 

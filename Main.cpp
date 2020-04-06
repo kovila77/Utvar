@@ -8,32 +8,43 @@ void main()
 {
 	cout << "hello world (" << endl;
 
-	//cout << endl;
+	cout << endl;
 
-	//Stove ms(1, 1);
-	//ms.print();
+	Stove ms(1, 1);
+	ms.print();
 
-	//cout << endl;
+	cout << endl;
 
-	//Pan p(3, 2);
-	//p.print();
+	Pan p(3, 2);
+	p.print();
 
-	//cout << endl;
+	cout << endl;
 
-	//GasStove gs(1, 2, 3);
-	//gs.print();
+	GasStove gs(1, 2, 3);
+	gs.print();
 
-	//cout << endl;	
-	//
-	//ElectricStove es(1, 2, 4);
-	//es.print();
+	cout << endl;	
+	
+	ElectricStove es(1, 2, 4);
+	es.print();
 
-	//cout << endl;
+	cout << endl;
 
-	//Multicooker mk(true, 1, 2, 3, 4);
-	//mk.print();
+	Multicooker mk(true, 1, 2, 3, 4);
+	mk.print(); 
 
-	//cout << ms.print << endl;
+	cout << endl;
+
+	Multicooker* mk2 = new Multicooker(false, 14, 2500, 255, 16992);
+	mk2->print();
+
+	cout << endl;
+
+	KitchenUtensils* ku;
+	ku = mk2;
+	ku->print();
+
+	cout << endl;
 
 	PTree r = nullptr;
 	bool res;
@@ -47,6 +58,8 @@ void main()
 	PrintTree(r, 1);
 
 	DeleteTree(r);
+
+	cout << endl;
 
 	system("pause");
 }
