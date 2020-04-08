@@ -5,17 +5,17 @@
 
 Pan::Pan()
 {
-	std::cout << "Write Volume: " << std::endl;
+	std::cout << "Ââåäèòå îáú¸ì: " << std::endl;
 	volume = inputInt();
 }
 
 void Pan::print()
 {
 	KitchenUtensils::print();
-	std::cout << "Volume: " << volume << std::endl;
+	std::cout << "Îáú¸ì: " << volume << std::endl;
 }
 
 std::string Pan::GetTypeName()
 {
-	return "Pan";
+	return "Êàñòğşëÿ";
 }

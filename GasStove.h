@@ -12,4 +12,7 @@ public:
 	void print() override;
 
 	std::string GetTypeName() override;
+
+	~GasStove() override = default;
+
 };

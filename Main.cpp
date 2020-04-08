@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void main()
+int main()
 {
 	//cout << "hello world (" << endl;
 	setlocale(LC_ALL, "Russian");
@@ -84,14 +84,15 @@ void main()
 		cout << "1 Ввод" << endl;
 		cout << "2 Удаление" << endl;
 		cout << "3 Вывод" << endl;
+		cout << "4 Выход" << endl;
 		while (true)
 		{
 			act = inputInt();
-			if (act >= 0 && act <= 3)
+			if (act >= 0 && act <= 4)
 			{
 				break;
 			}
-			std::cout << "Действие должно быть 1, 2 или 3" << std::endl;
+			std::cout << "Действие должно быть 1, 2, 3 или 4" << std::endl;
 		}
 		switch (act)
 		{
@@ -135,15 +136,20 @@ void main()
 				break;
 			}
 			bool wasInsert;
+			wasInsert = true;
 			Insert(root, uten, wasInsert);
 			if (!wasInsert)
 			{
 				delete uten;
+
 			}
 			break;
-		case 2:
-
+		case 2: {
+			cout << "Введите инвентарный номер утвари для удаления:" << endl;
+			int cr = 0, in = inputInt();
+			deletFromTree(root, in, cr, false);
 			break;
+		}
 		case 3:
 			int typePrint;
 			cout << "Выберете тип обхода :" << endl;
@@ -159,6 +165,7 @@ void main()
 				}
 				std::cout << "Тип должен быть 1, 2 или 3" << std::endl;
 			}
+			cout << endl;
 			switch (typePrint)
 			{
 			case 1:
@@ -171,12 +178,23 @@ void main()
 				PrintTreeSimm(root, 1);
 				break;
 			}
+			cout << endl;
 			break;
+		case 4: {
+			std::cout << "Подтверждаете выход?" << std::endl;
+			string s;
+			cin >> s;
+			if (s == "y" || s == "Y" || s == "д" || s == "Д")
+			{
+				DeleteTree(root);
+				return 0;
+			}
+			break;
+		}
 		default:
 			break;
 		}
 	}
-
-
-	system("pause");
+	DeleteTree(root);
+	return 0;
 }

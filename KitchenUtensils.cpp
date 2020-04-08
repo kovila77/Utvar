@@ -5,11 +5,12 @@
 
 KitchenUtensils::KitchenUtensils()
 {
-	std::cout << "Write Invenory number: "<< std::endl;
+	std::cout << "Создание утвари..." << std::endl;
+	std::cout << "Введите инвентарный номер: "<< std::endl;
 	inventoryNumber = inputInt();
 }
 
 void KitchenUtensils::print()
 {
-	std::cout << "Invenory number: " << inventoryNumber << std::endl;
+	std::cout << "Инвентарный номер: " << inventoryNumber << std::endl;
 }

@@ -10,6 +10,8 @@ public:
 
 	virtual std::string GetTypeName() = 0;
 
+	virtual ~KitchenUtensils() = default;
+
 protected:
 	KitchenUtensils();
 };

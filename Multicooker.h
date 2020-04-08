@@ -13,4 +13,7 @@ public:
 	void print() override;
 
 	std::string GetTypeName() override;
+
+	~Multicooker() override = default;
+
 };

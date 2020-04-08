@@ -5,17 +5,17 @@
 
 ElectricStove::ElectricStove()
 {
-	std::cout << "Write Power: " << std::endl;
+	std::cout << "Введите мощность: " << std::endl;
 	power = inputInt();
 }
 
 void ElectricStove::print()
 {
 	Stove::print();
-	std::cout << "Power: " << power << std::endl;
+	std::cout << "Мощность: " << power << std::endl;
 }
 
 std::string ElectricStove::GetTypeName()
 {
-	return "ElectricStove";
+	return "Электрическая плита";
 }

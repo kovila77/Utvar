@@ -5,7 +5,7 @@
 
 Stove::Stove()
 {
-	std::cout << "Write Color: " << std::endl;
+	std::cout << "¬ведите цвет: " << std::endl;
 	while (true)
 	{
 		color = inputInt();
@@ -13,17 +13,17 @@ Stove::Stove()
 		{
 			break;
 		}
-		std::cout << "Color must be > 0" << std::endl;
+		std::cout << "÷вет должен быть > 0" << std::endl;
 	}
 }
 
 void Stove::print()
 {
 	KitchenUtensils::print();
-	std::cout << "Color: " << color << std::endl;
+	std::cout << "÷вет: " << color << std::endl;
 }
 
 std::string Stove::GetTypeName()
 {
-	return "Stove";
+	return "ѕлита";
 }

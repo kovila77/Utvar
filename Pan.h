@@ -12,4 +12,6 @@ public:
 	void print() override;
 
 	std::string GetTypeName() override;
+
+	~Pan() override = default;
 };

@@ -5,18 +5,18 @@
 
 Multicooker::Multicooker()
 {
-	std::cout << "Write Have fast function: " << std::endl;
+	std::cout << "Есть ли функция скороварки? (y, д / n, н): " << std::endl;
 	haveFastFunction = inputBool();
 }
 
 void Multicooker::print()
 {
 	ElectricStove::print();
-	std::cout << "Volume: " << volume << std::endl;
-	std::cout << "Have fast function: " << (haveFastFunction ? "yes" : "no") << std::endl;
+	std::cout << "Объём: " << volume << std::endl;
+	std::cout << "Имеется функция скороварки: " << (haveFastFunction ? "yes" : "no") << std::endl;
 }
 
 std::string Multicooker::GetTypeName()
 {
-	return "Multicooker";
+	return "Мультиварка";
 }

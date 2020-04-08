@@ -8,8 +8,10 @@ public:
 	unsigned int color;
 
 	Stove();
-	
+
 	void print()  override;
 
 	std::string GetTypeName() override;
+
+	~Stove() override = default;
 };

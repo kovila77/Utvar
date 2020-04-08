@@ -10,9 +10,9 @@ bool inputBool()
 	while (true)
 	{
 		getline(cin, s);
-		if (s == "y") return true;
-		if (s == "n") return false;
-		cout << "Repeat (only \"y\" or \"n\")" << endl;
+		if (s == "y" || s == "Y" || s == "д" || s == "Д") return true;
+		if (s == "n" || s == "N" || s == "н" || s == "Н") return false;
+		cout << "Повторите (только \"y\" или \"д\" для yes, \"n\" или \"н\" для no)" << endl;
 	}
 }
 
@@ -29,7 +29,7 @@ int inputInt()
 		}
 		else
 		{
-			cout << "Write only number" << endl;
+			cout << "Вводите только цифры" << endl;
 		}
 	}
 	return newI;

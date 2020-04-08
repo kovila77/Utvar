@@ -106,6 +106,7 @@ void Insert(PTree& Root, KitchenUtensils* newItem, bool& wasInsert)
 			else
 			{
 				wasInsert = false;
+				cout << "Утварь с таким инвентарным номером уже существует" << endl;
 				cout << Root->item->GetTypeName() << endl;
 				Root->item->print();
 			}
