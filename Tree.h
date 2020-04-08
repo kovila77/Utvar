@@ -1,5 +1,6 @@
 #pragma once
 #include "Utensils.h"
+#include <string>
 
 struct Tree
 {
@@ -37,3 +38,8 @@ void DeleteTree(PTree& R);
 
 // Печать дерева на бок
 void PrintTree(PTree R, int level);
+
+
+void PrintTreeDirect(PTree R, int level);
+void PrintTreeBack(PTree R, int level);
+void PrintTreeSimm(PTree R, int level);

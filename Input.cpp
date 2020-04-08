@@ -4,6 +4,18 @@
 
 using namespace std;
 
+bool inputBool()
+{
+	string s;
+	while (true)
+	{
+		getline(cin, s);
+		if (s == "y") return true;
+		if (s == "n") return false;
+		cout << "Repeat (only \"y\" or \"n\")" << endl;
+	}
+}
+
 int inputInt()
 {
 	bool ok = false;
@@ -29,7 +41,11 @@ void intputInt(bool& InputIsTrue, int& i)
 	getline(cin, s);
 
 	InputIsTrue = true;
-	if (s == "0") i = 0; else
+	if (s == "0")
+	{
+		i = 0;
+	}
+	else
 	{
 		try
 		{

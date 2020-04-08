@@ -1,5 +1,6 @@
 #pragma once
 #include "KitchenUtensils.h"
+#include <string>
 
 class Stove : virtual public KitchenUtensils
 {
@@ -9,4 +10,6 @@ public:
 	Stove();
 	
 	void print()  override;
+
+	std::string GetTypeName() override;
 };

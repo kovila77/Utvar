@@ -106,6 +106,8 @@ void Insert(PTree& Root, KitchenUtensils* newItem, bool& wasInsert)
 			else
 			{
 				wasInsert = false;
+				cout << Root->item->GetTypeName() << endl;
+				Root->item->print();
 			}
 		}
 	}
@@ -255,25 +257,6 @@ void DeleteTree(PTree& R)
 	delete R;
 }
 
-//void InfFind(PTree root, unsigned long long& number, unsigned long long& tmp, bool& find)
-//{
-//	if (root == nullptr || find)
-//	{
-//		return;
-//	}
-//	InfFind(root->Left, number, tmp, find);
-//	if (number == 0)
-//	{
-//		tmp = root->Data;
-//		find = true;
-//	}
-//	else
-//	{
-//		number--;
-//		InfFind(root->Right, number, tmp, find);
-//	}
-//}
-
 void PrintTree(PTree R, int level)
 {
 	if (R == nullptr)
@@ -285,4 +268,37 @@ void PrintTree(PTree R, int level)
 	}
 	cout << setw(6) << R->item->inventoryNumber << endl;
 	PrintTree(R->Left, level + 1);
+}
+
+void PrintTreeDirect(PTree R, int level)
+{
+	if (R == nullptr)
+		return;
+	cout << R->item->GetTypeName() << endl;
+	R->item->print();
+	cout << endl;
+	PrintTreeDirect(R->Left, level + 1);
+	PrintTreeDirect(R->Right, level + 1);
+}
+
+void PrintTreeBack(PTree R, int level)
+{
+	if (R == nullptr)
+		return;
+	PrintTreeBack(R->Left, level + 1);
+	PrintTreeBack(R->Right, level + 1);
+	cout << R->item->GetTypeName() << endl;
+	R->item->print();
+	cout << endl;
+}
+
+void PrintTreeSimm(PTree R, int level)
+{
+	if (R == nullptr)
+		return;
+	PrintTreeDirect(R->Left, level + 1);
+	cout << R->item->GetTypeName() << endl;
+	R->item->print();
+	cout << endl;
+	PrintTreeDirect(R->Right, level + 1);	
 }

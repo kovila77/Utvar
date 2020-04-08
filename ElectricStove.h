@@ -1,5 +1,6 @@
 #pragma once
 #include "Stove.h"
+#include <string>
 
 class ElectricStove : public Stove
 {
@@ -9,4 +10,6 @@ public:
 	ElectricStove();
 
 	void print()  override;
+
+	std::string GetTypeName() override;
 };
