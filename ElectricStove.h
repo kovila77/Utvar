@@ -2,7 +2,7 @@
 #include "Stove.h"
 #include <string>
 
-class ElectricStove : public Stove
+class ElectricStove : virtual public Stove
 {
 public:
 	int power;
