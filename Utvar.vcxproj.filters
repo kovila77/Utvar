@@ -62,9 +62,6 @@
     <ClInclude Include="Multicooker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Utensils.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Tree.h">
       <Filter>Header Files</Filter>
     </ClInclude>

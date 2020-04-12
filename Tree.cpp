@@ -1,7 +1,5 @@
 #include <iostream>
 #include <iomanip>
-//#include <fstream>
-//#include <string>
 #include "Tree.h"
 #define max(a,b) (((a) > (b)) ? (a) : (b))
 using namespace std;
@@ -297,9 +295,29 @@ void PrintTreeSimm(PTree R, int level)
 {
 	if (R == nullptr)
 		return;
-	PrintTreeDirect(R->Left, level + 1);
+	PrintTreeSimm(R->Left, level + 1);
 	cout << R->item->GetTypeName() << endl;
 	R->item->print();
 	cout << endl;
-	PrintTreeDirect(R->Right, level + 1);	
+	PrintTreeSimm(R->Right, level + 1);
+}
+
+
+KitchenUtensils* Find(PTree root, int inventoryNumber)
+{
+	if (root == nullptr)
+		return nullptr;
+	if (root->item->inventoryNumber == inventoryNumber)
+	{
+		return root->item;
+	}
+	KitchenUtensils* ku = Find(root->Left, inventoryNumber);
+	if (ku == nullptr)
+	{
+		return Find(root->Right, inventoryNumber);
+	}
+	else
+	{
+		return ku;
+	}
 }

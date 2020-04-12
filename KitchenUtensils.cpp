@@ -1,14 +1,11 @@
-#include "KitchenUtensils.h"
 #include <iostream>
 #include <string>
+#include "KitchenUtensils.h"
 #include "Input.h"
 
-KitchenUtensils::KitchenUtensils()
+KitchenUtensils::KitchenUtensils(int inventoryNumber)
 {
-	std::cout << "—оздание утвари..." << std::endl;
-	//std::cout << "¬ведите инвентарный номер: " << std::endl;
-	std::cout << "¬ведите инвентарный номер: "<< std::endl;
-	inventoryNumber = inputInt();
+	this->inventoryNumber = inventoryNumber;
 }
 
 void KitchenUtensils::print()

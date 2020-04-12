@@ -1,12 +1,13 @@
-#include "Multicooker.h"
 #include <iostream>
 #include <string>
+#include "Multicooker.h"
 #include "Input.h"
+#include "Tree.h"
 
-Multicooker::Multicooker()
+Multicooker::Multicooker(int inventoryNumber, string color, int power, int volume, bool haveFastFunction)
+	: KitchenUtensils(inventoryNumber), ElectricStove(inventoryNumber, color, power), Pan(inventoryNumber, volume), Stove(inventoryNumber, color)
 {
-	std::cout << "Есть ли функция скороварки? (y, д / n, н): " << std::endl;
-	haveFastFunction = inputBool();
+	this->haveFastFunction = haveFastFunction;
 }
 
 void Multicooker::print()

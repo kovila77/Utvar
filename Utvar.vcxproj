@@ -131,7 +131,6 @@
     <ClInclude Include="Stove.h" />
     <ClInclude Include="KitchenUtensils.h" />
     <ClInclude Include="Tree.h" />
-    <ClInclude Include="Utensils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ElectricStove.cpp" />

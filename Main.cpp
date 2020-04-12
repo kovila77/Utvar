@@ -1,8 +1,25 @@
 #include <iostream>
-#include "Utensils.h"
+#include "KitchenUtensils.h"
+#include "Stove.h"
+#include "Pan.h"
+#include "ElectricStove.h"
+#include "GasStove.h"
+#include "Multicooker.h"
+#include "Input.h"
 #include "Tree.h"
 
 using namespace std;
+
+KitchenUtensils* MakeUten(int type, PTree root);
+int GetINventoryNumber(PTree root);
+
+string GetColor();
+int GetVolume();
+
+int GetPower();
+
+int GetGasConsumption();
+bool GetHaveFastFunction();
 
 int main()
 {
@@ -48,34 +65,12 @@ int main()
 				}
 				std::cout << "Утварь должна быть 1, 2, 3, 4 или 5" << std::endl;
 			}
-			switch (typeUtensil)
-			{
-			case 1:
-				uten = new Stove();
-				break;
-			case 2:
-				uten = new Pan();
-				break;
-			case 3:
-				uten = new ElectricStove();
-				break;
-			case 4:
-				uten = new GasStove();
-				break;
-			case 5:
-				uten = new Multicooker();
-				break;
-			default:
-				uten = new Multicooker();
-				break;
-			}
-			bool wasInsert;
-			wasInsert = true;
+			uten = MakeUten(typeUtensil, root);
+			bool  wasInsert; wasInsert = true;
 			Insert(root, uten, wasInsert);
 			if (!wasInsert)
 			{
 				delete uten;
-
 			}
 			break;
 		case 2: {
@@ -131,4 +126,105 @@ int main()
 	}
 	DeleteTree(root);
 	return 0;
+}
+
+
+
+
+KitchenUtensils* MakeUten(int type, PTree root)
+{
+	std::cout << "Создание утвари..." << std::endl;
+	KitchenUtensils* uten;
+	string color;
+	int in, volume, power, gc;
+	bool hff;
+	in = GetINventoryNumber(root);
+	switch (type)
+	{
+	case 1:
+		color = GetColor();
+		uten = new Stove(in, color);
+		break;
+	case 2:
+		volume = GetVolume();
+		uten = new Pan(in, volume);
+		break;
+	case 3:
+		color = GetColor();
+		power = GetPower();
+		uten = new ElectricStove(in, color, power);
+		break;
+	case 4:
+		color = GetColor();
+		gc = GetGasConsumption();
+		uten = new GasStove(in, color, gc);
+		break;
+	/*case 5:
+		color = GetColor();
+		uten = new Multicooker(in, color, GetPower(), GetVolume(), GetHaveFastFunction());
+		break;*/
+	default:
+		color = GetColor();
+		power = GetPower();
+		volume = GetVolume();
+		uten = new Multicooker(in, color, power, volume, GetHaveFastFunction());
+		break;
+	}
+
+	return uten;
+}
+
+int GetINventoryNumber(PTree root)
+{
+	std::cout << "Введите инвентарный номер: " << std::endl;
+	int inventoryNumber;
+	KitchenUtensils* ku = nullptr;
+	while (true)
+	{
+		inventoryNumber = inputInt();
+		ku = Find(root, inventoryNumber);
+		if (ku == nullptr)
+		{
+			return inventoryNumber;
+		}
+		else
+		{
+			std::cout << "Такой инвентарный номер уже есть в дереве! Элемент:" << std::endl;
+			ku->print();
+			std::cout << "Введите другой инвентарный номер" << std::endl;
+		}
+	}
+}
+
+string GetColor()
+{
+	string color;
+	std::cout << "Введите цвет: " << std::endl;
+	//std::cin >> color;
+	getline(cin, color);
+	return color;
+}
+
+int GetVolume()
+{
+	std::cout << "Введите объём: " << std::endl;
+	return inputInt();
+}
+
+int GetPower()
+{
+	std::cout << "Введите мощность: " << std::endl;
+	return inputInt();
+}
+
+int GetGasConsumption()
+{
+	std::cout << "Введите сколько газа потребляет: " << std::endl;
+	return inputInt();
+}
+
+bool GetHaveFastFunction()
+{
+	std::cout << "Есть ли функция скороварки? (y, д / n, н): " << std::endl;
+	return inputBool();
 }

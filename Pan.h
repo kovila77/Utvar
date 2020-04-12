@@ -1,13 +1,13 @@
 #pragma once
-#include "KitchenUtensils.h"
 #include <string>
+#include "KitchenUtensils.h"
 
 class Pan : virtual public KitchenUtensils
 {
 public:
 	int volume;
 
-	Pan();
+	Pan(int inventoryNumber, int volume);
 
 	void print() override;
 

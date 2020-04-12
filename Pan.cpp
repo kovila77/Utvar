@@ -1,12 +1,12 @@
-#include "Pan.h"
 #include <iostream>
 #include <string>
+#include "Pan.h"
 #include "Input.h"
+#include "Tree.h"
 
-Pan::Pan()
+Pan::Pan(int inventoryNumber, int volume) : KitchenUtensils(inventoryNumber)
 {
-	std::cout << "Введите объём: " << std::endl;
-	volume = inputInt();
+	this->volume = volume;
 }
 
 void Pan::print()

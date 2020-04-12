@@ -1,6 +1,6 @@
 #pragma once
-#include "Utensils.h"
 #include <string>
+#include "KitchenUtensils.h"
 
 struct Tree
 {
@@ -43,3 +43,5 @@ void PrintTree(PTree R, int level);
 void PrintTreeDirect(PTree R, int level);
 void PrintTreeBack(PTree R, int level);
 void PrintTreeSimm(PTree R, int level);
+
+KitchenUtensils* Find(PTree root, int inventoryNumber);

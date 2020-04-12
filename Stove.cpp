@@ -1,20 +1,12 @@
-#include "Stove.h"
 #include <iostream>
-#include "Input.h"
 #include <string>
+#include "Stove.h"
+#include "Input.h"
+#include "Tree.h"
 
-Stove::Stove()
+Stove::Stove(int inventoryNumber, string color) : KitchenUtensils(inventoryNumber)
 {
-	std::cout << "¬ведите цвет: " << std::endl;
-	while (true)
-	{
-		color = inputInt();
-		if (color > 0)
-		{
-			break;
-		}
-		std::cout << "÷вет должен быть > 0" << std::endl;
-	}
+	this->color = color;
 }
 
 void Stove::print()

@@ -1,13 +1,14 @@
 #pragma once
-#include "KitchenUtensils.h"
 #include <string>
+#include "KitchenUtensils.h"
+using namespace std;
 
 class Stove : virtual public KitchenUtensils
 {
 public:
-	unsigned int color;
+	string color;
 
-	Stove();
+	Stove(int inventoryNumber, string color);
 
 	void print()  override;
 

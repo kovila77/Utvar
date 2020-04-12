@@ -1,12 +1,12 @@
-#include "ElectricStove.h"
 #include <iostream>
 #include <string>
+#include "ElectricStove.h"
 #include "Input.h"
+#include "Tree.h"
 
-ElectricStove::ElectricStove()
+ElectricStove::ElectricStove(int inventoryNumber, string color, int power) : KitchenUtensils(inventoryNumber), Stove(inventoryNumber, color)
 {
-	std::cout << "¬ведите мощность: " << std::endl;
-	power = inputInt();
+	this->power = power;
 }
 
 void ElectricStove::print()

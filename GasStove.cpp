@@ -1,12 +1,12 @@
-#include "GasStove.h"
 #include <iostream>
 #include <string>
+#include "GasStove.h"
 #include "Input.h"
+#include "Tree.h"
 
-GasStove::GasStove()
+GasStove::GasStove(int inventoryNumber, string color, int gasConsumption) : KitchenUtensils(inventoryNumber), Stove(inventoryNumber, color)
 {
-	std::cout << "¬ведите сколько газа потребл€ет: "<< std::endl;
-	gasConsumption = inputInt();
+	this->gasConsumption = gasConsumption;
 }
 
 void GasStove::print()

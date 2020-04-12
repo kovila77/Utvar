@@ -13,5 +13,6 @@ public:
 	virtual ~KitchenUtensils() = default;
 
 protected:
-	KitchenUtensils();
+	KitchenUtensils(int inventoryNumber);
+	//KitchenUtensils() =default;
 };

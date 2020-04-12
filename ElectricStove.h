@@ -1,13 +1,13 @@
 #pragma once
-#include "Stove.h"
 #include <string>
+#include "Stove.h"
 
 class ElectricStove : virtual public Stove
 {
 public:
 	int power;
 
-	ElectricStove();
+	ElectricStove(int inventoryNumber, string color, int power);
 
 	void print()  override;
 
