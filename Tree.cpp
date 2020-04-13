@@ -253,6 +253,7 @@ void DeleteTree(PTree& R)
 	if (R == nullptr) return;
 	DeleteTree(R->Left);
 	DeleteTree(R->Right);
+	delete R->item;
 	delete R;
 }
 
