@@ -190,6 +190,7 @@ int GetINventoryNumber(PTree root)
 		else
 		{
 			std::cout << "“акой инвентарный номер уже есть в дереве! Ёлемент:" << std::endl;
+			std::cout << ku->GetTypeName() << std::endl;
 			ku->print();
 			std::cout << "¬ведите другой инвентарный номер" << std::endl;
 		}
